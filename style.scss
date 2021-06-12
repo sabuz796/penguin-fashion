@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "mixin";
+@import "reset";
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+// --------header section----------
+header {
+  background-color: #fffbf0;
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    img {
+      width: 30%;
+    }
+    .logo {
+      margin-left: 200px;
+    }
+    .nav-menu {
+      position: relative;
+      right: 200px;
+    }
+    .nav-menu ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding: 10px;
+    }
+    .hamburger {
+      width: 25px;
+      cursor: pointer;
+      position: relative;
+      left: 120px;
+      display: none;
+    }
+    .menu-icon {
+      width: 25px;
+      cursor: pointer;
+      display: none;
+    }
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    p {
+      margin: 40px 0;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    & > div {
+      width: 40%;
+    }
+    & img {
+      width: 100%;
+    }
+    &:nth-child(2) {
+      width: 60%;
+    }
+    .buy-now {
+      @include button;
+    }
+
+    .highlight {
+      @include highlight;
+    }
+    .cart-icon {
+      @include cart;
+    }
+  }
+}
+
+// -----cart section--------
+main {
+  margin-top: 40px;
+  & > h1 {
+    margin-left: 40px;
+  }
+
+  .cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
+  .f-single-card {
+    width: 20%;
+    margin: 40px 60px;
+  }
+  .f-single-card > div {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+  }
+  .f-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .buy-now {
+    @include button;
+  }
+}
+// feature section
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 60px;
+
+  .feature-icon {
+    width: 80px;
+    margin-right: 20px;
+  }
+  .feature-part {
+    width: 40%;
+  }
+
+  .features {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+  .feature-img {
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+
+footer {
+  background-color: #fffbf0;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  text-align: center;
+  p,
+  h1 {
+    margin-bottom: 10px;
+  }
+  hr {
+    width: 100%;
+  }
+  button {
+    margin: 20px 0;
+    border: 0;
+    padding: 10px 20px;
+    background-color: #99d98c;
+    border-radius: 500px;
+    color: white;
+  }
+  .social-icon {
+    font-size: 40px;
+    color: #3d5a80;
+    margin: 20px 20px;
+  }
+}
+
+// making site response
+
+@media (max-width: 576px) {
+  header {
+    nav {
+      .nav-menu ul {
+        display: none;
+        width: 100%;
+        // flex-direction: column;
+      }
+      .nav-menu ul.show {
+        display: flex;
+        margin-top: 100px;
+        // padding-right: 100px;
+      }
+      #nav-ul {
+        // margin-top: 100px;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+    display: block;
+
+    .logo img {
+      width: 180px;
+    }
+    .logo {
+      position: relative;
+      right: 150px;
+    }
+    section {
+      flex-direction: column;
+      & > div {
+        width: 100%;
+      }
+      &:nth-child(2) {
+        width: 60%;
+      }
+    }
+  }
+
+  // main section
+  main {
+    .cart {
+      flex-direction: column;
+    }
+    .f-single-card {
+      width: 100%;
+    }
+  }
+
+  .feature {
+    flex-direction: column-reverse;
+    .feature-part {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .features {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      padding: 20 0px;
+    }
+  }
+}

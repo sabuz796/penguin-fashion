@@ -1,0 +1,15 @@
+@mixin button {
+  text-decoration: none;
+  background-color: #a4bc46;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: white;
+}
+
+@mixin highlight {
+  color: #fabe4c;
+}
+
+@mixin cart {
+  color: white;
+}

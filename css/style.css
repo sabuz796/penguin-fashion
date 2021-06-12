@@ -12,19 +12,42 @@ body {
 
 header {
   background-color: #fffbf0;
+  padding-bottom: 30px;
 }
 
 header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 0;
+  margin: 0 100px;
 }
 
-header nav a {
+header nav .nav-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+header nav .nav-ul li a {
+  display: inline-block;
+  padding: 10px 20px;
   text-decoration: none;
   color: black;
 }
@@ -33,33 +56,7 @@ header nav img {
   width: 30%;
 }
 
-header nav .logo {
-  margin-left: 200px;
-}
-
-header nav .nav-menu {
-  position: relative;
-  right: 200px;
-}
-
-header nav .nav-menu ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 10px;
-}
-
 header nav .hamburger {
-  width: 25px;
-  cursor: pointer;
-  position: relative;
-  left: 120px;
-  display: none;
-}
-
-header nav .menu-icon {
   width: 25px;
   cursor: pointer;
   display: none;
@@ -87,7 +84,7 @@ header section h1 {
 }
 
 header section > div {
-  width: 40%;
+  width: 50%;
 }
 
 header section img {
@@ -172,6 +169,18 @@ main .buy-now {
   color: white;
 }
 
+main .highlight {
+  color: #fabe4c;
+}
+
+main .product-title {
+  margin: 10px 0;
+}
+
+main .product-info {
+  margin: 10px 0;
+}
+
 .feature {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,28 +261,28 @@ footer .social-icon {
 }
 
 @media (max-width: 576px) {
-  header {
-    display: block;
+  header nav {
+    padding: 30px;
+    margin: 0;
   }
-  header nav .nav-menu ul {
+  header nav .nav-ul {
     display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
   }
-  header nav .nav-menu ul.show {
+  header nav .nav-ul.show {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 100px;
   }
   header nav .hamburger {
     display: block;
   }
-  header .logo img {
+  header nav .logo {
     width: 180px;
-  }
-  header .logo {
-    position: relative;
-    right: 150px;
   }
   header section {
     -webkit-box-orient: vertical;
@@ -282,7 +291,7 @@ footer .social-icon {
             flex-direction: column;
   }
   header section > div {
-    width: 100%;
+    width: 110%;
   }
   header section:nth-child(2) {
     width: 60%;
@@ -304,6 +313,57 @@ footer .social-icon {
   }
   .feature .feature-part {
     width: 100%;
+    margin-bottom: 50px;
+  }
+  .feature .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    margin: 0;
+    padding: 20px 60px;
+  }
+  header section {
+    gap: 40px;
+    padding: 20px 0;
+  }
+  header section > div {
+    width: 100%;
+  }
+  header section:nth-child(2) {
+    width: 70%;
+  }
+  main .cart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .f-single-card {
+    width: 70%;
+  }
+  .feature {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .feature .feature-part {
+    width: 85%;
     margin-bottom: 50px;
   }
   .feature .features {
